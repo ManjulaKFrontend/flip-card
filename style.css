@@ -1,0 +1,72 @@
+body{
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+.container{
+    /* background-color: red; */
+
+    width: 2000px;
+	margin:auto;
+}
+.flip{
+	min-height: 200vh;
+	background-color:slategray;
+	padding: 100px 100px;
+}
+.flip .flip-card{
+    flex:0 0 calc(33.33% - 30px);
+    margin:0 15px 30px;
+     perspective: 1000px; /*remove this if you dont want the 3d effect */
+}
+.flip .flip-card-inner{
+	position: relative;
+	transform-style: preserve-3d;
+	transition: all 1s ease;
+}
+.flip .flip-card-front img{
+	width: 100%;
+}
+.flip .flip-card-front,
+.flip .flip-card-back{
+	backface-visibility: hidden;
+}
+.flip .flip-card-back{
+	background-color:black;
+	position: absolute;
+	left:0;
+	top:0;
+	padding: 15px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transform: rotateY(180deg);
+}
+.flip .flip-card-back h3{
+	font-size:40px;
+	color:white;
+	margin:0 0 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.flip .flip-card-back p{
+	font-size: 20px;
+	color:white;
+	margin:0;
+}
+.flip .flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
+ }
